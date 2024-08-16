@@ -1,0 +1,42 @@
+@import "font.css";
+@import "style.css";
+
+* {
+  transition: all ease .5s;
+}
+
+body {
+  @apply bg-palmela-900
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Helvetica Bold', serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.helvetica-medium {
+  font-family: 'Helvetica Medium', serif;
+  font-weight: 500;
+}
+
+#nav a::after {
+  content: '';
+  display: block;
+  width: calc(100% - 5px);
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 72 56 / var(--tw-bg-opacity));
+  height: 1px;
+  margin: auto;
+  opacity: 0;
+  transition: all ease .5s;
+}
+
+#nav a:hover::after {
+  opacity: 1;
+}
