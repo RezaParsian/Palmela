@@ -8,13 +8,17 @@ export default {
 		extend: {
 			colors: {
 				palmela: {
-					50: '#d3fff5',
-					100: '#beece1',
-					200: '#d9f6ef',
+					50:'#e2e8e6',
+					100: '#d3fff5',
+					200: '#beece1',
+					300: '#d9f6ef',
 					400: '#35ef8b',
 					800: '#005340',
 					900: '#004838'
 				}
+			},
+			animation:{
+				'bounce-slow': 'bounce 2s infinite',
 			}
 		},
 	},

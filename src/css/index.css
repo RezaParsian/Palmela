@@ -6,7 +6,7 @@
 }
 
 body {
-  @apply bg-palmela-900
+  @apply bg-palmela-50
 }
 
 h1,
@@ -39,4 +39,96 @@ h6 {
 
 #nav a:hover::after {
   opacity: 1;
+}
+
+#navbar {
+  position: absolute;
+  top: 35px;
+  width: 100%;
+  z-index: 100;
+}
+
+#hero {
+  background: url("../images/bg-2.png") no-repeat top left;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+#hero h1 {
+  font-family: "Helvetica Extrabold", serif;
+  font-size: 180px;
+  line-height: 120px;
+  letter-spacing: -9.9px;
+  @apply text-palmela-100
+}
+
+.form-label {
+  color: rgba(0, 71, 55, 0.64);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.select-box{
+  margin: 0 !important;
+  position: relative;
+}
+
+.select-box .flagImg {
+  position: absolute;
+  top: .75rem;
+  right: 36px;
+  width: 2rem;
+  height: auto;
+}
+
+select{
+  width: 100%;
+  padding: 0.75rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: calc(100% - 15px) 50%;
+}
+
+input, textarea, select {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  padding: 12px 15px 12px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.section-title {
+  font-size: 96px;
+  line-height: 97px;
+  position: relative;
+  top: -13px;
+  letter-spacing: -2.88px;
+}
+
+#process{
+  background: url('../images/process-bg-2.webp');
+  background-size: 100% 100%;
+  min-height: 100vh;
+}
+
+.title{
+  color: #004737;
+  font-family: "Helvetica Bold", serif;
+  font-size: 40px;
+  line-height: 55px;
+  margin-bottom: 22px;
+  white-space: pre-line;
+}
+
+#process p, #buy{
+  color: #555555;
+  white-space: pre-line;
 }
