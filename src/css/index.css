@@ -132,3 +132,37 @@ input, textarea, select {
   color: #555555;
   white-space: pre-line;
 }
+
+.service-card:before {
+  background-image: url('../images/service-bg-1.webp');
+}
+
+.service-card:after {
+  background-image: url('../images/service-bg-2.webp');
+  visibility: hidden;
+  opacity: 0;
+}
+
+.swiper-slide:hover .service-card:after{
+  visibility: visible;
+  opacity: 1;
+}
+
+.swiper-slide:hover .info *{
+  @apply text-palmela-400 border-palmela-400
+}
+
+.service-card:before, .service-card:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-position: top left;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+  z-index: -1;
+}
