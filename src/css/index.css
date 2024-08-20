@@ -1,6 +1,36 @@
 @import "font.css";
 @import "style.css";
 
+@layer base {
+  html {
+    font-family: 'Helvetica Regular', system-ui, sans-serif;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 26px;
+  }
+
+  h5 {
+    font-size: 22px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+}
+
 * {
   transition: all ease .5s;
 }
@@ -192,7 +222,68 @@ input, textarea, select {
   }
 }
 
-
-.wtf{
+.btn_ripple {
   animation: ripple .8s linear infinite;
+}
+
+#swiper_testimonial_pagination .swiper-pagination-bullet,
+#swiper_testimonial_swiper_button_next,
+#swiper_testimonial_swiper_button_prev {
+  background-color: #00604a1a;
+  @apply text-palmela-800 rounded-full;
+  width: 55px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-family: "Helvetica Bold", serif;
+}
+
+#swiper_testimonial_pagination .swiper-pagination-bullet {
+  @apply hover:bg-palmela-900 hover:text-palmela-400
+}
+
+#swiper_testimonial_pagination .swiper-pagination-bullet-active {
+  @apply bg-palmela-900 text-palmela-400
+}
+
+#swiper_testimonial_swiper_button_next:hover,
+#swiper_testimonial_swiper_button_prev:hover {
+  @apply hover:bg-palmela-400
+}
+
+details {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 86, 67, 0.2);
+  padding-bottom: 20px;
+  margin-top: 20px;
+
+  max-height: 4rem;
+}
+
+details[open]{
+  transition: max-height 2s;
+  max-height: 99rem;
+}
+
+summary {
+  @apply text-palmela-800;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 20px 0 0;
+  border: none;
+  list-style: none;
+}
+
+details[open] .feather-chevron-down {
+  display: none;
+}
+
+.feather-chevron-up {
+  display: none;
+}
+
+details[open] .feather-chevron-up {
+  display: block;
 }

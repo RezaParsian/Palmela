@@ -6,8 +6,12 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontFamily:{
+				'Hel_Med':["Helvetica\\ Medium"]
+			},
 			colors: {
 				palmela: {
+					10:'#474747',
 					50:'#e2e8e6',
 					100: '#d3fff5',
 					200: '#beece1',
