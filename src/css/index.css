@@ -1,5 +1,6 @@
 @import "font.css";
 @import "style.css";
+@import "767px.css";
 
 @layer base {
   html {
@@ -307,4 +308,8 @@ footer .menu-header {
 
 footer .menu-item {
   @apply text-[#ffffffbf] text-[16px] my-4
+}
+
+#offCanvas{
+  transition: all .5s;
 }
