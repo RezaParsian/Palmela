@@ -262,7 +262,7 @@ details {
   max-height: 4rem;
 }
 
-details[open]{
+details[open] {
   transition: max-height 2s;
   max-height: 99rem;
 }
@@ -286,4 +286,25 @@ details[open] .feather-chevron-down {
 
 details[open] .feather-chevron-up {
   display: block;
+}
+
+#footer-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(../images/footer-shape-1.webp);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% 97%;
+}
+
+footer .menu-header {
+  @apply font-Hel_Med text-white text-[20px] font-light leading-[16px];
+}
+
+footer .menu-item {
+  @apply text-[#ffffffbf] text-[16px] my-4
 }

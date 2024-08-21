@@ -23,6 +23,7 @@ export default {
 			},
 			animation:{
 				'bounce-slow': 'bounce 2s infinite',
+				'rotate':'spin .2s 2',
 			}
 		},
 	},
