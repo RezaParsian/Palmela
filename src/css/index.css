@@ -310,6 +310,24 @@ footer .menu-item {
   @apply text-[#ffffffbf] text-[16px] my-4
 }
 
-#offCanvas{
+#offCanvas {
   transition: all .5s;
+}
+
+#videoMain {
+  background: url('/src/images/video-bg-2.png');
+  background-size: cover;
+}
+
+#video::before {
+  content: '';
+  @apply bg-palmela-400;
+  width: 100%;
+  display: block;
+  height: 34rem;
+  position: absolute;
+}
+
+.is-sticky{
+  @apply fixed top-0 left-0 right-0 bg-palmela-100 !important;
 }
