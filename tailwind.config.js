@@ -2,12 +2,14 @@
 export default {
 	content: [
 		"./index.html",
+		"./contact-us.html",
 		"./src/**/*.{js,ts,jsx,tsx,html}",
 	],
 	theme: {
 		extend: {
 			fontFamily:{
-				'Hel_Med':["Helvetica\\ Medium"]
+				'Hel_Med':["Helvetica\\ Medium"],
+				'Hel_Bld':["Helvetica\\ Bold"]
 			},
 			colors: {
 				palmela: {

@@ -45,4 +45,8 @@
     height: 0 !important;
     position: absolute;
   }
+
+  #banner{
+    height: 20rem !important;
+  }
 }
