@@ -1,0 +1,52 @@
+@media only screen and (max-width: 767px) {
+  #hero h1 {
+    font-family: "Helvetica Extrabold", serif;
+    font-size: 34px !important;
+    line-height: 45px !important;
+    letter-spacing: 0 !important;
+    @apply text-palmela-100
+  }
+
+  #hero #hero-shape {
+    max-width: 60px;
+  }
+
+  .section-title {
+    font-size: 28px !important;
+    line-height: 38px !important;
+    top: 10px !important;
+    letter-spacing: unset !important;
+  }
+
+  #process {
+    background: unset !important;
+    min-height: unset !important;
+  }
+
+  .title {
+    color: #004737;
+    font-family: "Helvetica Bold", serif;
+    font-size: 24px !important;
+    line-height: 36px !important;
+    margin-bottom: 15px !important;
+    white-space: unset !important;
+  }
+
+  #videoMain {
+    background-size: 130% 130% !important;
+    background-position: center !important;
+  }
+
+  #video::before {
+    content: '';
+    @apply bg-palmela-400;
+    width: 100%;
+    display: block;
+    height: 0 !important;
+    position: absolute;
+  }
+
+  #banner{
+    height: 20rem !important;
+  }
+}

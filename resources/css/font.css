@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Helvetica Extrabold';
+  src: url('../fonts/helvetica/HelveticaNowDisplay-ExtraBold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Helvetica Bold';
+  src: url('../fonts/helvetica/HelveticaNowDisplay-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Helvetica Medium';
+  src: url('../fonts/helvetica/HelveticaNowDisplay-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Helvetica Regular';
+  src: url('../fonts/helvetica/HelveticaNowDisplay-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url('../fonts/helvetica/HelveticaNowDisplay-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-VariableFont_slnt,wght.woff2') format('woff2');
+}
