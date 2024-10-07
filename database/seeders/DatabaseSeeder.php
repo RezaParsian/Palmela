@@ -19,5 +19,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Reza Parsian',
             'email' => 'rezaparsian76@gmail.com',
         ]);
+
+        $this->call([
+            CurrencySeed::class,
+            ExchangeSeed::class
+        ]);
     }
 }

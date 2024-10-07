@@ -6,41 +6,45 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: 'Helvetica Regular', system-ui, sans-serif;
-  }
+    html {
+        font-family: 'Helvetica Regular', system-ui, sans-serif;
+    }
 
-  h1 {
-    font-size: 32px;
-  }
+    h1 {
+        font-size: 32px;
+    }
 
-  h2 {
-    font-size: 30px;
-  }
+    h2 {
+        font-size: 30px;
+    }
 
-  h3 {
-    font-size: 28px;
-  }
+    h3 {
+        font-size: 28px;
+    }
 
-  h4 {
-    font-size: 26px;
-  }
+    h4 {
+        font-size: 26px;
+    }
 
-  h5 {
-    font-size: 22px;
-  }
+    h5 {
+        font-size: 22px;
+    }
 
-  h6 {
-    font-size: 18px;
-  }
+    h6 {
+        font-size: 18px;
+    }
+
+    body {
+        @apply bg-palmela-50
+    }
+}
+
+[x-cloak] {
+    display: none !important;
 }
 
 * {
-  transition: all ease .5s;
-}
-
-body {
-  @apply bg-palmela-50
+    transition: all ease .5s;
 }
 
 h1,
@@ -49,311 +53,311 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Helvetica Bold', serif;
-  font-weight: 700;
-  line-height: 1.2;
+    font-family: 'Helvetica Bold', serif;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .helvetica-medium {
-  font-family: 'Helvetica Medium', serif;
-  font-weight: 500;
+    font-family: 'Helvetica Medium', serif;
+    font-weight: 500;
 }
 
 .regular {
-  font-family: 'Helvetica Regular', serif
+    font-family: 'Helvetica Regular', serif
 }
 
 #nav a::after {
-  content: '';
-  display: block;
-  width: calc(100% - 5px);
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 72 56 / var(--tw-bg-opacity));
-  height: 1px;
-  margin: auto;
-  opacity: 0;
-  transition: all ease .5s;
+    content: '';
+    display: block;
+    width: calc(100% - 5px);
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 72 56 / var(--tw-bg-opacity));
+    height: 1px;
+    margin: auto;
+    opacity: 0;
+    transition: all ease .5s;
 }
 
 #nav a:hover::after {
-  opacity: 1;
+    opacity: 1;
 }
 
 #navbar {
-  position: absolute;
-  top: 35px;
-  width: 100%;
-  z-index: 100;
+    position: absolute;
+    top: 35px;
+    width: 100%;
+    z-index: 100;
 }
 
 #hero {
-  background: url("/public/src/images/bg-2.png") no-repeat top left;
-  width: 100%;
-  min-height: 100vh;
-  background-size: cover;
-  position: relative;
+    background: url("/public/src/images/bg-2.png") no-repeat top left;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    position: relative;
 }
 
 #hero h1 {
-  font-family: "Helvetica Extrabold", serif;
-  font-size: 180px;
-  line-height: 120px;
-  letter-spacing: -9.9px;
-  @apply text-palmela-100
+    font-family: "Helvetica Extrabold", serif;
+    font-size: 180px;
+    line-height: 120px;
+    letter-spacing: -9.9px;
+    @apply text-palmela-100
 }
 
 .form-label {
-  color: rgba(0, 71, 55, 0.64);
-  font-size: 14px;
-  font-weight: 500;
+    color: rgba(0, 71, 55, 0.64);
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .select-box {
-  margin: 0 !important;
-  position: relative;
+    margin: 0 !important;
+    position: relative;
 }
 
 .select-box .flagImg {
-  position: absolute;
-  top: .75rem;
-  right: 36px;
-  width: 2rem;
-  height: auto;
+    position: absolute;
+    top: .75rem;
+    right: 36px;
+    width: 2rem;
+    height: auto;
 }
 
 select {
-  width: 100%;
-  padding: 0.75rem;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  background-repeat: no-repeat;
-  background-size: 16px;
-  background-position: calc(100% - 15px) 50%;
+    width: 100%;
+    padding: 0.75rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: calc(100% - 15px) 50%;
 }
 
 input, textarea, select {
-  background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.5rem;
-  padding: 12px 15px 12px;
-  width: 100%;
-  font-size: 16px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    padding: 12px 15px 12px;
+    width: 100%;
+    font-size: 16px;
 }
 
 .section-title {
-  font-size: 96px;
-  line-height: 97px;
-  position: relative;
-  top: -13px;
-  letter-spacing: -2.88px;
+    font-size: 96px;
+    line-height: 97px;
+    position: relative;
+    top: -13px;
+    letter-spacing: -2.88px;
 }
 
 #process {
-  background: url('/public/src/images/process-bg-2.webp');
-  background-size: 100% 100%;
-  min-height: 100vh;
+    background: url('/public/src/images/process-bg-2.webp');
+    background-size: 100% 100%;
+    min-height: 100vh;
 }
 
 .title {
-  color: #f0bd1a;
-  font-family: "Helvetica Bold", serif;
-  font-size: 40px;
-  line-height: 55px;
-  margin-bottom: 22px;
-  white-space: pre-line;
+    color: #f0bd1a;
+    font-family: "Helvetica Bold", serif;
+    font-size: 40px;
+    line-height: 55px;
+    margin-bottom: 22px;
+    white-space: pre-line;
 }
 
 #process p, #buy {
-  color: #555555;
-  white-space: pre-line;
+    color: #555555;
+    white-space: pre-line;
 }
 
 .service-card:before {
-  background-image: url('/public/src/images/service-bg-1.webp');
+    background-image: url('/public/src/images/service-bg-1.webp');
 }
 
 .service-card:after {
-  background-image: url('/public/src/images/service-bg-2.webp');
-  visibility: hidden;
-  opacity: 0;
+    background-image: url('/public/src/images/service-bg-2.webp');
+    visibility: hidden;
+    opacity: 0;
 }
 
 .swiper-slide:hover .service-card:after {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 
 .swiper-slide:hover .info * {
-  @apply text-palmela-400 border-palmela-400
+    @apply text-palmela-400 border-palmela-400
 }
 
 .service-card:before, .service-card:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-position: top left;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  -webkit-transition: all ease .5s;
-  transition: all ease .5s;
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-position: top left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-transition: all ease .5s;
+    transition: all ease .5s;
+    z-index: -1;
 }
 
 .safety {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 19px;
-  background-color: rgba(0, 83, 64, 0.1);
-  width: 70px;
-  aspect-ratio: 1;
-  border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 19px;
+    background-color: rgba(0, 83, 64, 0.1);
+    width: 70px;
+    aspect-ratio: 1;
+    border-radius: 50%;
 
 }
 
 @keyframes ripple {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55), 0 0 0 20px rgba(255, 255, 255, 0.55), 0 0 0 30px rgba(255, 255, 255, 0.55)
-  }
-  100% {
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.55), 0 0 0 30px rgba(203, 203, 203, 0.55), 0 0 0 40px rgba(203, 203, 203, 0)
-  }
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55), 0 0 0 20px rgba(255, 255, 255, 0.55), 0 0 0 30px rgba(255, 255, 255, 0.55)
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.55), 0 0 0 30px rgba(203, 203, 203, 0.55), 0 0 0 40px rgba(203, 203, 203, 0)
+    }
 }
 
 .btn_ripple {
-  animation: ripple .8s linear infinite;
+    animation: ripple .8s linear infinite;
 }
 
 #swiper_testimonial_pagination .swiper-pagination-bullet,
 #swiper_testimonial_swiper_button_next,
 #swiper_testimonial_swiper_button_prev {
-  background-color: #00604a1a;
-  @apply text-palmela-800 rounded-full;
-  width: 55px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 17px;
-  font-family: "Helvetica Bold", serif;
+    background-color: #00604a1a;
+    @apply text-palmela-800 rounded-full;
+    width: 55px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-family: "Helvetica Bold", serif;
 }
 
 #swiper_testimonial_pagination .swiper-pagination-bullet {
-  @apply hover:bg-palmela-900 hover:text-palmela-400
+    @apply hover:bg-palmela-900 hover:text-palmela-400
 }
 
 #swiper_testimonial_pagination .swiper-pagination-bullet-active {
-  @apply bg-palmela-900 text-palmela-400
+    @apply bg-palmela-900 text-palmela-400
 }
 
 #swiper_testimonial_swiper_button_next:hover,
 #swiper_testimonial_swiper_button_prev:hover {
-  @apply hover:bg-palmela-400
+    @apply hover:bg-palmela-400
 }
 
 details {
-  cursor: pointer;
-  border-bottom: 1px solid rgba(0, 86, 67, 0.2);
-  padding-bottom: 20px;
-  margin-top: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 86, 67, 0.2);
+    padding-bottom: 20px;
+    margin-top: 20px;
 
-  max-height: 4rem;
+    max-height: 4rem;
 }
 
 details[open] {
-  transition: max-height 2s;
-  max-height: 99rem;
+    transition: max-height 2s;
+    max-height: 99rem;
 }
 
 summary {
-  @apply text-palmela-800;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 0 20px 0 0;
-  border: none;
-  list-style: none;
+    @apply text-palmela-800;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 20px 0 0;
+    border: none;
+    list-style: none;
 }
 
 details[open] .feather-chevron-down {
-  display: none;
+    display: none;
 }
 
 .feather-chevron-up {
-  display: none;
+    display: none;
 }
 
 details[open] .feather-chevron-up {
-  display: block;
+    display: block;
 }
 
 #footer-bg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-image: url(/public/src/images/footer-shape-1.webp);
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: 100% 97%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url(/public/src/images/footer-shape-1.webp);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 97%;
 }
 
 footer .menu-header {
-  @apply font-Hel_Med text-white text-[20px] font-light leading-[16px];
+    @apply font-Hel_Med text-white text-[20px] font-light leading-[16px];
 }
 
 footer .menu-item {
-  @apply text-[#ffffffbf] text-[16px] my-4
+    @apply text-[#ffffffbf] text-[16px] my-4
 }
 
 #offCanvas {
-  transition: all .5s;
+    transition: all .5s;
 }
 
 #videoMain {
-  background: url('/public/src/images/video-bg-2.png');
-  background-size: cover;
+    background: url('/public/src/images/video-bg-2.png');
+    background-size: cover;
 }
 
 #video::before {
-  content: '';
-  @apply bg-palmela-400;
-  width: 100%;
-  display: block;
-  height: 34rem;
-  position: absolute;
+    content: '';
+    @apply bg-palmela-400;
+    width: 100%;
+    display: block;
+    height: 34rem;
+    position: absolute;
 }
 
-.is-sticky{
-  @apply fixed top-0 left-0 right-0 bg-palmela-100 !important;
+.is-sticky {
+    @apply fixed top-0 left-0 right-0 bg-palmela-100 !important;
 }
 
 
-#banner{
-  background: url("/public/src/images/br-bg-1.png") no-repeat top left;
-  width: 100%;
-  height: 31.6rem;
-  background-size: cover;
-  position: relative;
+#banner {
+    background: url("/public/src/images/br-bg-1.png") no-repeat top left;
+    width: 100%;
+    height: 31.6rem;
+    background-size: cover;
+    position: relative;
 }
 
 #breadcrumb {
-  @apply text-palmela-200
+    @apply text-palmela-200
 }
 
-#breadcrumb a{
-  @apply text-palmela-400 font-Hel_Bld
+#breadcrumb a {
+    @apply text-palmela-400 font-Hel_Bld
 }
 
-#breadcrumb a::after{
-  content: '';
-  width: 6px;
-  @apply bg-palmela-200 aspect-square inline-block mx-2 rounded-full;
+#breadcrumb a::after {
+    content: '';
+    width: 6px;
+    @apply bg-palmela-200 aspect-square inline-block mx-2 rounded-full;
 }

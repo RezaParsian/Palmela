@@ -19,37 +19,47 @@
 
         <div class="hidden md:flex flex-1">
             <ul class="flex gap-4 my-auto flex-1 pl-40" id="nav">
-                <li>
-                    <a class="helvetica-medium" title="Home" href="{{route('home')}}">Home</a>
-                </li>
+                @if(!request()->is('dashboard*'))
+                    <li>
+                        <a class="helvetica-medium" title="Home" href="{{route('home')}}">Home</a>
+                    </li>
 
-                <li>
-                    <a class="helvetica-medium" title="Our History" href="#">Our History</a>
-                </li>
+                    <li>
+                        <a class="helvetica-medium" title="Our History" href="#">Our History</a>
+                    </li>
 
-                <li>
-                    <a class="helvetica-medium" title="Payments" href="#">Payments</a>
-                </li>
+                    <li>
+                        <a class="helvetica-medium" title="Payments" href="#">Payments</a>
+                    </li>
 
-                <li>
-                    <a class="helvetica-medium" title="Resources" href="#">Resources</a>
-                </li>
+                    <li>
+                        <a class="helvetica-medium" title="Resources" href="#">Resources</a>
+                    </li>
 
-                <li>
-                    <a class="helvetica-medium" title="Shop" href="#">Shop</a>
-                </li>
+                    <li>
+                        <a class="helvetica-medium" title="Shop" href="#">Shop</a>
+                    </li>
 
-                <li>
-                    <a class="helvetica-medium" title="Blog" href="#">Blog</a>
-                </li>
+                    <li>
+                        <a class="helvetica-medium" title="Blog" href="#">Blog</a>
+                    </li>
 
-                <li>
-                    <a class="helvetica-medium" title="Help" href="{{route('contact')}}">Help</a>
-                </li>
+                    <li>
+                        <a class="helvetica-medium" title="Help" href="{{route('contact')}}">Help</a>
+                    </li>
+                @else
+                    <li>
+                        <a class="helvetica-medium" title="Help" href="{{route('currencies.index')}}">Currencies</a>
+                    </li>
+
+                    <li>
+                        <a class="helvetica-medium" title="Help" href="{{route('contact')}}">Currencies</a>
+                    </li>
+                @endif
             </ul>
 
             <div class="flex gap-3">
-                <a href="{{route('dashboard')}}" class="rounded-full bg-palmela-400 hover:bg-palmela-800 hover:text-white helvetica-medium py-2 px-4 text-[15px]">
+                <a href="{{route('currencies.index')}}" class="rounded-full bg-palmela-400 hover:bg-palmela-800 hover:text-white helvetica-medium py-2 px-4 text-[15px]">
                     @guest
                         Login
                     @else
@@ -342,5 +352,7 @@
         </div>
     </div>
 </footer>
+
+@yield('js')
 </body>
 </html>
