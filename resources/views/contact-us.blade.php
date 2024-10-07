@@ -147,7 +147,7 @@
                     </label>
                 </div>
 
-                <button class="rounded-lg bg-palmela-400 w-full p-3 font-semibold text-sm my-6 hover:bg-palmela-800 hover:text-palmela-400">
+                <button class="rounded-lg bg-palmela-400 w-full p-3 font-semibold text-sm my-6 hover:bg-palmela-100 hover:text-palmela-900">
                     Send Message
                 </button>
             </form>

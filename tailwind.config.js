@@ -12,14 +12,14 @@ export default {
             },
             colors: {
                 palmela: {
-                    10: '#474747',
-                    50: '#e2e8e6',
-                    100: '#d3fff5',
-                    200: '#beece1',
-                    300: '#d9f6ef',
-                    400: '#35ef8b',
-                    800: '#005340',
-                    900: '#004838'
+                    10: '#665e42',  // Dark golden brown
+                    50: '#fdf6e3',  // Light golden beige
+                    100: '#f9e8b2', // Pale gold
+                    200: '#f5da80', // Soft gold
+                    300: '#f2cb4d', // Brighter gold
+                    400: '#f0bd1a', // True gold
+                    800: '#b38b07', // Deep gold
+                    900: '#8c6e05', // Darker gold
                 }
             },
             animation: {

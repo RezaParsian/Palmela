@@ -375,7 +375,7 @@
                                 1 USD = 70.95 AFN
                             </p>
 
-                            <button class="rounded-lg bg-palmela-400 w-full p-3 font-semibold text-sm my-6 hover:bg-palmela-800 hover:text-palmela-400">
+                            <button class="rounded-lg bg-palmela-400 w-full p-3 font-semibold text-sm my-6 hover:bg-palmela-200 hover:text-palmela-900">
                                 Get Exchange Rate
                             </button>
 
@@ -423,7 +423,7 @@
                         is an email address.
                     </p>
 
-                    <button class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-800 hover:text-palmela-400">
+                    <button class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-400 hover:text-black">
                         Get free quote now
                     </button>
                 </div>
@@ -439,7 +439,7 @@
                         information.
                     </p>
 
-                    <button class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-800 hover:text-palmela-400">
+                    <button class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-400 hover:text-black">
                         Get started now
                     </button>
                 </div>
@@ -713,7 +713,7 @@
         <div class="container mx-auto">
             <div class="mx-3 md:flex md:mx-24">
                 <div class="flex-1">
-                    <h2 class="section-title md:whitespace-pre-line text-palmela-800 md:!text-[96px] md:!leading-[97px] md:!tracking-[-1.92px]">
+                    <h2 class="section-title md:whitespace-pre-line text-black/80 md:!text-[96px] md:!leading-[97px] md:!tracking-[-1.92px]">
                         Save up to 12x when
                         sending money abroad</h2>
 
@@ -724,7 +724,7 @@
                         <img src="{{asset('./src/images/feature-1.png')}}" alt="feature-1" class="absolute right-6 -top-16 hidden md:block">
                     </p>
 
-                    <h4 class="!text-[24px] mt-6 md:mt-0 md:!text-[40px] text-palmela-900">How keep your money safe</h4>
+                    <h4 class="!text-[24px] mt-6 md:mt-0 md:!text-[40px] text-black/70">How keep your money safe</h4>
 
                     <div class="flex flex-col md:flex-row items-center md:items-baseline gap-12 mt-10">
                         <div class="flex flex-col items-center md:items-baseline">
@@ -732,10 +732,8 @@
                                 <img src="{{asset('./src/images/lock.svg')}}" alt="lock">
                             </div>
 
-                            <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-palmela-900/80">Our dedicated fraud and
-                                security
-                                teams work to keep your money
-                                safe</p>
+                            <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-black">Our dedicated fraud and security
+                                teams work to keep your money safe</p>
                         </div>
 
                         <div class="flex flex-col items-center md:items-baseline">
@@ -743,8 +741,7 @@
                                 <img src="{{asset('./src/images/fingerprint.svg')}}" alt="fingerprint">
                             </div>
 
-                            <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-palmela-900/80">We use 3-factor to
-                                authentication
+                            <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-black">We use 3-factor to authentication
                                 to protect your account</p>
                         </div>
 
@@ -753,7 +750,7 @@
                                 <img src="{{asset('./src/images/planning.svg')}}" alt="planning">
                             </div>
 
-                            <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-palmela-900/80">We hold your money established
+                            <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-black">We hold your money established
                                 financial institutions</p>
                         </div>
                     </div>
@@ -793,7 +790,7 @@
 
                     <span class="text-palmela-900 font-semibold mx-4">Very good</span>
 
-                    <ul class="flex gap-2 [&_li]:bg-[#00B67A] items-center">
+                    <ul class="flex gap-2 [&_li]:bg-[#f0bd1a] items-center">
                         <li>
                             <img src="{{asset('./src/images/star-5.svg')}}" alt="star-5">
                         </li>
@@ -825,8 +822,8 @@
             <div id="swiper_testimonial" class="swiper mt-12">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="border border-[#00473729] rounded-2xl p-4 md:p-12">
-                            <ul class="flex gap-2 [&_li]:bg-[#00B67A] [&_li]:p-1 items-center">
+                        <div class="border border-[#f0bd1a29] rounded-2xl p-4 md:p-12">
+                            <ul class="flex gap-2 [&_li]:bg-[#f0bd1a] [&_li]:p-1 items-center">
                                 <li>
                                     <img src="{{asset('./src/images/star-5.svg')}}" alt="star-5">
                                 </li>
@@ -865,8 +862,8 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <div class="border border-[#00473729] rounded-2xl p-4 md:p-12">
-                            <ul class="flex gap-2 [&_li]:bg-[#00B67A] [&_li]:p-1 items-center">
+                        <div class="border border-[#f0bd1a29] rounded-2xl p-4 md:p-12">
+                            <ul class="flex gap-2 [&_li]:bg-[#f0bd1a] [&_li]:p-1 items-center">
                                 <li>
                                     <img src="{{asset('./src/images/star-5.svg')}}" alt="star-5">
                                 </li>
@@ -905,8 +902,8 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <div class="border border-[#00473729] rounded-2xl p-4 md:p-12">
-                            <ul class="flex gap-2 [&_li]:bg-[#00B67A] [&_li]:p-1 items-center">
+                        <div class="border border-[#f0bd1a29] rounded-2xl p-4 md:p-12">
+                            <ul class="flex gap-2 [&_li]:bg-[#f0bd1a] [&_li]:p-1 items-center">
                                 <li>
                                     <img src="{{asset('./src/images/star-5.svg')}}" alt="star-5">
                                 </li>

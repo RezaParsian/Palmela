@@ -191,17 +191,16 @@
 <footer class="bg-palmela-900 md:bg-palmela-400 p-3">
     <div class="container mx-auto pt-12 md:pt-32">
         <div class="md:flex items-center">
-            <h2 class="text-palmela-200 md:text-palmela-800 md:!leading-[91px] md:!tracking-[-1.92px] text-[28px] md:text-[96px] md:whitespace-pre-line flex-1">We have no
+            <h2 class="text-palmela-200 md:text-black/80 md:!leading-[91px] md:!tracking-[-1.92px] text-[28px] md:text-[96px] md:whitespace-pre-line flex-1">We have no
                 hidden fees for
                 subscription</h2>
 
             <div class="flex-1">
-                <p class="md:whitespace-pre-line md:font-medium md:!text-[24px] md:!leading-[36px] text-palmela-200 md:text-palmela-900 my-7 md:my-0">Stay current
-                    with text updates, email notifications,
+                <p class="md:whitespace-pre-line md:font-medium md:!text-[24px] md:!leading-[36px] text-palmela-200 md:text-black/80 my-7 md:my-0">Stay current with text updates, email notifications,
                     online access, or call our friendly support staff
                     24/7 to grow up your own business.</p>
 
-                <button class="bg-palmela-400 md:bg-palmela-800 text-palmela-900 md:text-palmela-400 rounded-lg px-4 py-3 mt-4 font-Hel_Med">
+                <button class="bg-palmela-400 md:bg-palmela-800 text-palmela-800 md:text-white rounded-lg px-4 py-3 mt-4 font-Hel_Med">
                     Get setup today
                 </button>
             </div>
@@ -328,11 +327,11 @@
 
                 <div class="grid grid-cols-2 md:flex justify-between md:absolute bottom-14 right-32 left-32">
                     <a href="{{route('contact')}}" class="text-palmela-200 md:text-palmela-800 md:font-Hel_Med">Help</a>
-                    <a href="#" class="text-palmela-200 md:text-palmela-800 md:font-Hel_Med">Terms and Conditions</a>
-                    <a href="#" class="text-palmela-200 md:text-palmela-800 md:font-Hel_Med">FAQ</a>
-                    <a href="#" class="text-palmela-200 md:text-palmela-800 md:font-Hel_Med">Our Pricing</a>
-                    <a href="#" class="text-palmela-200 md:text-palmela-800 md:font-Hel_Med">All Country</a>
-                    <a href="#" class="text-palmela-200 md:text-palmela-800 md:font-Hel_Med">Refer Friends</a>
+                    <a href="#" class="text-palmela-200 md:text-black/80 md:font-Hel_Med">Terms and Conditions</a>
+                    <a href="#" class="text-palmela-200 md:text-black/80 md:font-Hel_Med">FAQ</a>
+                    <a href="#" class="text-palmela-200 md:text-black/80 md:font-Hel_Med">Our Pricing</a>
+                    <a href="#" class="text-palmela-200 md:text-black/80 md:font-Hel_Med">All Country</a>
+                    <a href="#" class="text-palmela-200 md:text-black/80 md:font-Hel_Med">Refer Friends</a>
 
                     <p class="text-[#ffffffa6] text-center md:text-left col-span-2 mt-4 md:mt-0">
                         © Palmela is proudly owned by
