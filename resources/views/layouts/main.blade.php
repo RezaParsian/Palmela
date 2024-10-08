@@ -12,7 +12,7 @@
 <section id="navbar">
     <div class="container mx-auto bg-palmela-100 rounded-full py-4 px-6 flex justify-between">
         <div>
-            <a href="./">
+            <a href="{{route('home')}}">
                 <img src="{{asset('./src/images/palmela-logo.svg')}}" alt="#logo">
             </a>
         </div>
@@ -53,7 +53,7 @@
                     </li>
 
                     <li>
-                        <a class="helvetica-medium" title="Help" href="{{route('contact')}}">Currencies</a>
+                        <a class="helvetica-medium" title="Help" href="{{route('contact')}}">Exchange Rate</a>
                     </li>
                 @endif
             </ul>
@@ -206,7 +206,8 @@
                 subscription</h2>
 
             <div class="flex-1">
-                <p class="md:whitespace-pre-line md:font-medium md:!text-[24px] md:!leading-[36px] text-palmela-200 md:text-black/80 my-7 md:my-0">Stay current with text updates, email notifications,
+                <p class="md:whitespace-pre-line md:font-medium md:!text-[24px] md:!leading-[36px] text-palmela-200 md:text-black/80 my-7 md:my-0">Stay current with text updates,
+                    email notifications,
                     online access, or call our friendly support staff
                     24/7 to grow up your own business.</p>
 

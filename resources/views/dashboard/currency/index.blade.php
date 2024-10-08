@@ -22,46 +22,51 @@
                     </div>
                     <!-- Dialog Body -->
                     <div class="px-4 py-8">
-                        <form :action='url' method="post">
-                            @csrf
-                            @method('put')
+                        <template x-if="currency">
+                            <form :action='url' method="post">
+                                @csrf
+                                @method('put')
 
-                            <div class="my-3">
-                                <label for="symbol" class="font-Hel_Med text-[18px] text-palmela-800">Symbol</label>
+                                <div class="my-3">
+                                    <label for="symbol" class="font-Hel_Med text-[18px] text-palmela-800">Symbol</label>
 
-                                <input type="text" name="symbol" id="symbol" class="mt-3 border-palmela-300 focus:outline-none" required x-model="currency?.symbol">
+                                    <input type="text" name="symbol" id="symbol" class="mt-3 border-palmela-300 focus:outline-none" required x-model="currency.symbol">
 
-                                @error('email')
-                                <small class="text-rose-500">{{$message}}</small>
-                                @enderror
-                            </div>
+                                    @error('symbol')
+                                    <small class="text-rose-500">{{$message}}</small>
+                                    @enderror
+                                </div>
 
-                            <div class="my-3">
-                                <label for="email" class="font-Hel_Med text-[18px] text-palmela-800">Your </label>
+                                <div class="my-3">
+                                    <label for="name" class="font-Hel_Med text-[18px] text-palmela-800">Your </label>
 
-                                <input type="email" name="email" placeholder="Your  Here" id="email" class="mt-3 border-palmela-300 focus:outline-none" required>
+                                    <input type="text" name="name" placeholder="Your  Here" id="name" class="mt-3 border-palmela-300 focus:outline-none" required
+                                           x-model="currency.name">
 
-                                @error('email')
-                                <small class="text-rose-500">{{$message}}</small>
-                                @enderror
-                            </div>
+                                    @error('name')
+                                    <small class="text-rose-500">{{$message}}</small>
+                                    @enderror
+                                </div>
 
 
-                            <div class="my-3">
-                                <label for="email" class="font-Hel_Med text-[18px] text-palmela-800">Your </label>
+                                <div class="my-3">
+                                    <label for="price" class="font-Hel_Med text-[18px] text-palmela-800">Your </label>
 
-                                <input type="email" name="email" placeholder="Your Email Here" id="email" class="mt-3 border-palmela-300 focus:outline-none" required>
+                                    <input type="number" name="price" step="0.1" placeholder="Your Email Here" id="price" class="mt-3 border-palmela-300 focus:outline-none"
+                                           required
+                                           x-model="currency.price">
 
-                                @error('email')
-                                <small class="text-rose-500">{{$message}}</small>
-                                @enderror
-                            </div>
+                                    @error('price')
+                                    <small class="text-rose-500">{{$message}}</small>
+                                    @enderror
+                                </div>
 
-                            <button class="rounded-lg bg-palmela-400 w-full p-3 font-semibold text-sm my-6 hover:bg-palmela-100 hover:text-palmela-900">
-                                Update
-                            </button>
+                                <button class="rounded-lg bg-palmela-400 w-full p-3 font-semibold text-black text-sm my-6 hover:bg-palmela-100 hover:text-palmela-900">
+                                    Update
+                                </button>
 
-                        </form>
+                            </form>
+                        </template>
                     </div>
                     <!-- Dialog Footer -->
                     <div
@@ -76,6 +81,16 @@
         </div>
 
         <div class="container mx-auto px-3 md:px-0">
+            @if(session('msg'))
+                <div class="mx-auto w-1/3 m-7">
+                    <x-alert-success-component>
+                        <x-slot name="title">
+                            {{session('msg')}}
+                        </x-slot>
+                    </x-alert-success-component>
+                </div>
+            @endif
+
             <div class="overflow-hidden w-full overflow-x-auto rounded-md border border-neutral-300">
                 <table class="w-full text-left text-sm text-neutral-600">
                     <thead class="border-b border-neutral-300 bg-neutral-50 text-sm text-neutral-900">
