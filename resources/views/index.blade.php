@@ -57,10 +57,10 @@
                                 </div>
 
                                 <p class="text-palmela-800 font-semibold mt-3">
-                                    <span x-text="amount"></span>
+                                    <span x-text="Number(amount).toLocaleString()"></span>
                                     <span x-text="selectedFrom"></span>
                                     =
-                                    <span x-text="calculate"></span>
+                                    <span x-text="calculate.toLocaleString()"></span>
                                     <span x-text="selectedTo"></span>
                                 </p>
 
@@ -82,13 +82,15 @@
                         <span class="hidden md:block">CURRENCY</span>
 
                         <span class="flex">
-                    <img src="{{asset('./src/images/hero-img-1.png')}}" alt="hero-1"
-                         class="rounded-lg shadow-lg shadow-palmela-800 mt-12 md:ml-8">
+                            <span class="rounded-lg shadow-lg shadow-palmela-800 mt-12 md:ml-8 bg-white w-10/12 p-2">
+                                  <canvas id="chart">
+                                  </canvas>
+                            </span>
 
-                    <span class="hidden md:flex items-center cursor-pointer ml-auto">
-                        <img src="{{asset('./src/images/scroll-2.svg')}}" alt="scroll-2" class="animate-bounce-slow">
-                    </span>
-                </span>
+                            <span class="hidden md:flex items-center cursor-pointer ml-auto">
+                                <img src="{{asset('./src/images/scroll-2.svg')}}" alt="scroll-2" class="animate-bounce-slow">
+                            </span>
+                        </span>
                     </h1>
                 </div>
             </div>
@@ -775,11 +777,34 @@
                 selectedFrom: null,
                 selectedTo: null,
                 amount: 1,
+                timer:null,
+                chart: null,
+                labels: [],
+                datasets: [
+                    {
+                        label: 'AUD',
+                        data: [],
+                    },
+                    {
+                        label: 'IRR',
+                        data: [],
+                    }
+                ],
                 init() {
                     this.$nextTick().then(() => {
                         this.selectedFrom = this?.currencies?.[0]?.symbol;
                         this.selectedTo = this?.currencies?.[1]?.symbol;
-                    })
+
+                        this.generateChart();
+                    });
+
+                    this.$watch('selectedFrom', () => {
+                        this.getChartData();
+                    });
+
+                    this.$watch('selectedTo', () => {
+                        this.getChartData();
+                    });
                 },
                 get iconFrom() {
                     if (!this.selectedFrom)
@@ -799,19 +824,69 @@
                 },
                 get calculate() {
                     if (!this.selectedFrom || !this.selectedTo)
-                        return;
+                        return 0;
 
                     const fromCurrency = this.currencies.find(x => x.symbol === this.selectedFrom);
                     const toCurrency = this.currencies.find(x => x.symbol === this.selectedTo);
                     const rate = this.exchangeRates.find(x => x.base_currency_id === fromCurrency.id && x.target_currency_id === toCurrency.id)?.rate ?? 0;
 
-                    console.log({
-                        fromCurrency,
-                        toCurrency,
-                        rate
-                    })
+                    return ((this.amount * fromCurrency.price) / toCurrency.price) * rate;
+                },
+                getChartData() {
+                    const fromCurrency = this.currencies.find(x => x.symbol === this.selectedFrom);
+                    const toCurrency = this.currencies.find(x => x.symbol === this.selectedTo);
+                    const url = '{{route('chart',['xxx','yyy'])}}'
+                        .replace('xxx', fromCurrency.id)
+                        .replace('yyy', toCurrency.id);
 
-                    return (this.amount * toCurrency.price) * rate;
+                    clearTimeout(this.timer);
+
+                    this.timer = setTimeout(() => {
+                        axios.get(url)
+                            .then(res => {
+                                const data = [];
+                                const lables = [];
+
+                                Object.keys(res.data).forEach(currency => {
+                                    data.push({
+                                        label: currency,
+                                        data: res.data[currency].map(item => item.price),
+                                    });
+                                });
+
+                                Object.values(res.data).forEach(item => {
+                                    item.forEach(history => {
+                                        lables.push(history.created_at);
+                                    })
+                                });
+
+                                this.labels = lables;
+
+                                this.datasets = data;
+
+                                this.generateChart();
+                            })
+                            .catch(() => {
+                            });
+                    }, 700);
+
+                },
+                generateChart() {
+                    if (this.chart)
+                        this.chart.destroy();
+
+                    setTimeout(() => {
+                        this.chart = new Chart(
+                            document.getElementById('chart'),
+                            {
+                                type: 'line',
+                                data: {
+                                    labels: this.labels,
+                                    datasets: this.datasets,
+                                }
+                            }
+                        )
+                    }, 250);
                 }
             }
         }

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Cache;
 /**
  * @method static create(array $array)
  * @method static orderBy(string $string, string $string1)
+ * @method static find($from)
  * @property mixed $price
  * @property mixed $id
  */

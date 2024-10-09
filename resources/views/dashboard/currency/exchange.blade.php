@@ -13,7 +13,7 @@
                       dark:text-neutral-300">
                     <!-- Dialog Header -->
                     <div class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
-                        <h3 id="defaultModalTitle" class="font-semibold tracking-wide text-neutral-900 dark:text-white" x-text="currency?.name"></h3>
+                        <h3 id="defaultModalTitle" class="font-semibold tracking-wide text-neutral-900 dark:text-white">Exchange</h3>
                         <button @click="modalIsOpen = false" aria-label="close modal">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
@@ -22,41 +22,17 @@
                     </div>
                     <!-- Dialog Body -->
                     <div class="px-4 py-8">
-                        <template x-if="currency">
+                        <template x-if="exchange">
                             <form :action='url' method="post">
                                 @csrf
                                 @method('put')
 
                                 <div class="my-3">
-                                    <label for="symbol" class="font-Hel_Med text-[18px] text-palmela-800">Symbol</label>
+                                    <label for="rate" class="font-Hel_Med text-[18px] text-palmela-800">Exchange Rate</label>
 
-                                    <input type="text" name="symbol" id="symbol" class="mt-3 border-palmela-300 focus:outline-none" required x-model="currency.symbol">
+                                    <input type="number" step="0.1" name="rate" id="rate" class="mt-3 border-palmela-300 focus:outline-none" required x-model="exchange.rate">
 
                                     @error('symbol')
-                                    <small class="text-rose-500">{{$message}}</small>
-                                    @enderror
-                                </div>
-
-                                <div class="my-3">
-                                    <label for="name" class="font-Hel_Med text-[18px] text-palmela-800">Your </label>
-
-                                    <input type="text" name="name" placeholder="Your  Here" id="name" class="mt-3 border-palmela-300 focus:outline-none" required
-                                           x-model="currency.name">
-
-                                    @error('name')
-                                    <small class="text-rose-500">{{$message}}</small>
-                                    @enderror
-                                </div>
-
-
-                                <div class="my-3">
-                                    <label for="price" class="font-Hel_Med text-[18px] text-palmela-800">Your </label>
-
-                                    <input type="number" name="price" step="0.1" placeholder="Your Email Here" id="price" class="mt-3 border-palmela-300 focus:outline-none"
-                                           required
-                                           x-model="currency.price">
-
-                                    @error('price')
                                     <small class="text-rose-500">{{$message}}</small>
                                     @enderror
                                 </div>
@@ -96,21 +72,21 @@
                     <thead class="border-b border-neutral-300 bg-neutral-50 text-sm text-neutral-900">
                     <tr>
                         <th scope="col" class="p-4">#</th>
-                        <th scope="col" class="p-4">Name</th>
-                        <th scope="col" class="p-4">Symbol</th>
-                        <th scope="col" class="p-4">price</th>
+                        <th scope="col" class="p-4">From</th>
+                        <th scope="col" class="p-4">To</th>
+                        <th scope="col" class="p-4">Rate</th>
                         <th scope="col" class="p-4 w-5"></th>
                     </tr>
                     </thead>
                     <tbody class="divide-y divide-neutral-300 even:[&_tr]:bg-black/5">
-                    @foreach($currencies as $currency)
+                    @foreach($exchanges as $exchange)
                         <tr>
-                            <td class="p-4">{{$currency->id}}</td>
-                            <td class="p-4">{{$currency->name}}</td>
-                            <td class="p-4">{{$currency->symbol}}</td>
-                            <td class="p-4">{{number_format($currency->price)}} IRR</td>
+                            <td class="p-4">{{$exchange->id}}</td>
+                            <td class="p-4">{{$exchange->from->name}} ({{$exchange->from->symbol}})</td>
+                            <td class="p-4">{{$exchange->to->name}} ({{$exchange->to->symbol}})</td>
+                            <td class="p-4">{{number_format($exchange->rate)}}</td>
                             <td class="p-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 24 24" class="cursor-pointer" @click="openModal({{$currency}})">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 24 24" class="cursor-pointer" @click="openModal({{$exchange}})">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                                         <path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1"/>
                                         <path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3zM16 5l3 3"/>
@@ -124,7 +100,7 @@
             </div>
 
             <div class="mt-4">
-                {{$currencies->links('pagination::default')}}
+                {{$exchanges->links('pagination::default')}}
             </div>
         </div>
     </section>
@@ -135,12 +111,12 @@
         function data() {
             return {
                 modalIsOpen: false,
-                currency: null,
+                exchange: null,
                 url: '',
-                openModal(currency) {
+                openModal(exchange) {
                     this.modalIsOpen = true;
-                    this.currency = currency;
-                    this.url = '{{route('currencies.update','xxx')}}'.replace('xxx', currency.id);
+                    this.exchange = exchange;
+                    this.url = '{{route('currencies.exchange.update','xxx')}}'.replace('xxx', exchange.id);
                 }
             }
         }

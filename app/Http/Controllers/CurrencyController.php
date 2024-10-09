@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateCurrencyRequest;
+use App\Http\Requests\UpdateExchangeRequest;
 use App\Models\Currency;
 use App\Models\CurrencyHistory;
+use App\Models\Exchange;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
@@ -29,5 +31,20 @@ class CurrencyController extends Controller
         $currency->update($request->validated());
 
         return back()->with('msg', 'currency has been updated');
+    }
+
+    public function exchangeIndex(): View|Factory|Application
+    {
+        $exchanges = Exchange::with('to','from')
+            ->orderBy('id', 'desc')
+            ->paginate();
+
+        return view('dashboard.currency.exchange', compact('exchanges'));
+    }
+
+    public function updateExchange(UpdateExchangeRequest $request, Exchange $exchange): RedirectResponse
+    {
+        $exchange->update($request->validated());
+        return back()->with('msg', 'exchange rate has been updated');
     }
 }

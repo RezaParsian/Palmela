@@ -53,7 +53,7 @@
                     </li>
 
                     <li>
-                        <a class="helvetica-medium" title="Help" href="{{route('contact')}}">Exchange Rate</a>
+                        <a class="helvetica-medium" title="Help" href="{{route('currencies.exchange.index')}}">Exchange Rate</a>
                     </li>
                 @endif
             </ul>
