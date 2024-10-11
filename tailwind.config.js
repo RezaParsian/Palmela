@@ -12,14 +12,14 @@ export default {
             },
             colors: {
                 palmela: {
-                    10: '#665e42',  // Dark golden brown
-                    50: '#fdf6e3',  // Light golden beige
-                    100: '#f9e8b2', // Pale gold
-                    200: '#f5da80', // Soft gold
-                    300: '#f2cb4d', // Brighter gold
-                    400: '#f0bd1a', // True gold
-                    800: '#b38b07', // Deep gold
-                    900: '#8c6e05', // Darker gold
+                    10: '#e6e6e6',  // Very light black (almost white)
+                    50: '#cccccc',  // Light black (pale gray)
+                    100: '#b3b3b3', // Soft black (light gray)
+                    200: '#999999', // Neutral gray
+                    300: '#808080', // Medium black (standard gray)
+                    400: '#666666', // Deep gray
+                    800: '#333333', // Dark black (deep gray)
+                    900: '#000000', // Pure black
                 }
             },
             animation: {

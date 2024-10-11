@@ -250,7 +250,7 @@
             </div>
         </section>
 
-        <section id="solutions" class="pb:12 md:pb-48">
+        <section id="solutions" class="pb:12 md:pb-48 bg-[#fdf6e3]">
             <div class="container mx-auto">
                 <div class="md:flex md:mx-24 md:mt-32">
                     <div class="flex-1">
@@ -274,7 +274,7 @@
 
                                 <div class="flex mt-6">
                                     <div class="flex items-center">
-                                        <div class="bg-palmela-100 p-5 mx-6">
+                                        <div class="bg-[#fae7b1] p-5 mx-6">
                                             <img src="src/images/credit-card.svg" alt="credit-card">
                                         </div>
                                     </div>
@@ -300,7 +300,7 @@
 
                                 <div class="flex mt-6">
                                     <div class="flex items-center">
-                                        <div class="bg-palmela-100 p-5 mx-6">
+                                        <div class="bg-[#fae7b1] p-5 mx-6">
                                             <img src="src/images/family.svg" alt="credit-card">
                                         </div>
                                     </div>
@@ -326,7 +326,7 @@
 
                                 <div class="flex mt-6">
                                     <div class="flex items-center">
-                                        <div class="bg-palmela-100 p-5 mx-6">
+                                        <div class="bg-[#fae7b1] p-5 mx-6">
                                             <img src="src/images/my-business.svg" alt="credit-card">
                                         </div>
                                     </div>
@@ -352,7 +352,7 @@
 
                                 <div class="flex mt-6">
                                     <div class="flex items-center">
-                                        <div class="bg-palmela-100 p-5 mx-6">
+                                        <div class="bg-[#fae7b1] p-5 mx-6">
                                             <img src="src/images/donation.svg" alt="credit-card">
                                         </div>
                                     </div>
@@ -378,7 +378,7 @@
 
                                 <div class="flex mt-6">
                                     <div class="flex items-center">
-                                        <div class="bg-palmela-100 p-5 mx-6">
+                                        <div class="bg-[#fae7b1] p-5 mx-6">
                                             <img src="src/images/instance.svg" alt="credit-card">
                                         </div>
                                     </div>
@@ -400,7 +400,7 @@
             </div>
         </section>
 
-        <section id="sending_money" class="mt-12 md:mt-0 bg-palmela-400 pt-12 pb-24">
+        <section id="sending_money" class="mt-12 md:mt-0 bg-[#f0bd1a] pt-12 pb-24">
             <div class="container mx-auto">
                 <div class="mx-3 md:flex md:mx-24">
                     <div class="flex-1">
@@ -482,7 +482,7 @@
 
                         <span class="text-palmela-900 font-semibold mx-4">Very good</span>
 
-                        <ul class="flex gap-2 [&_li]:bg-[#f0bd1a] items-center">
+                        <ul class="flex gap-2 [&_li]:bg-[#666666] items-center">
                             <li>
                                 <img src="{{asset('./src/images/star-5.svg')}}" alt="star-5">
                             </li>
@@ -514,8 +514,8 @@
                 <div id="swiper_testimonial" class="swiper mt-12">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="border border-[#f0bd1a29] rounded-2xl p-4 md:p-12">
-                                <ul class="flex gap-2 [&_li]:bg-[#f0bd1a] [&_li]:p-1 items-center">
+                            <div class="border border-[#666666] rounded-2xl p-4 md:p-12">
+                                <ul class="flex gap-2 [&_li]:bg-[#666666] [&_li]:p-1 items-center">
                                     <li>
                                         <img src="{{asset('./src/images/star-5.svg')}}" alt="star-5">
                                     </li>
@@ -554,8 +554,8 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <div class="border border-[#f0bd1a29] rounded-2xl p-4 md:p-12">
-                                <ul class="flex gap-2 [&_li]:bg-[#f0bd1a] [&_li]:p-1 items-center">
+                            <div class="border border-[#666666] rounded-2xl p-4 md:p-12">
+                                <ul class="flex gap-2 [&_li]:bg-[#666666] [&_li]:p-1 items-center">
                                     <li>
                                         <img src="{{asset('./src/images/star-5.svg')}}" alt="star-5">
                                     </li>
@@ -594,8 +594,8 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <div class="border border-[#f0bd1a29] rounded-2xl p-4 md:p-12">
-                                <ul class="flex gap-2 [&_li]:bg-[#f0bd1a] [&_li]:p-1 items-center">
+                            <div class="border border-[#666666] rounded-2xl p-4 md:p-12">
+                                <ul class="flex gap-2 [&_li]:bg-[#666666] [&_li]:p-1 items-center">
                                     <li>
                                         <img src="{{asset('./src/images/star-5.svg')}}" alt="star-5">
                                     </li>
@@ -681,7 +681,7 @@
                                     </svg>
                                 </summary>
 
-                                <p class="text-palmela-10 !leading-[26px] mt-4 px-4">
+                                <p class="text-palmela-500 !leading-[26px] mt-4 px-4">
                                     Transfer details Choose the amount you want to send abroad, select how your receiver wants
                                     to get the money, and lastly, how you want to pay.
                                 </p>
@@ -704,7 +704,7 @@
                                     </svg>
                                 </summary>
 
-                                <p class="text-palmela-10 !leading-[26px] mt-4 px-4">
+                                <p class="text-palmela-500 !leading-[26px] mt-4 px-4">
                                     Transfer details Choose the amount you want to send abroad, select how your receiver wants
                                     to get the money, and lastly, how you want to pay.
                                 </p>
@@ -727,7 +727,7 @@
                                     </svg>
                                 </summary>
 
-                                <p class="text-palmela-10 !leading-[26px] mt-4 px-4">
+                                <p class="text-palmela-500 !leading-[26px] mt-4 px-4">
                                     Transfer details Choose the amount you want to send abroad, select how your receiver wants
                                     to get the money, and lastly, how you want to pay.
                                 </p>
@@ -750,7 +750,7 @@
                                     </svg>
                                 </summary>
 
-                                <p class="text-palmela-10 !leading-[26px] mt-4 px-4">
+                                <p class="text-palmela-500 !leading-[26px] mt-4 px-4">
                                     Transfer details Choose the amount you want to send abroad, select how your receiver wants
                                     to get the money, and lastly, how you want to pay.
                                 </p>

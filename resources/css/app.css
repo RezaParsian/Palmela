@@ -162,7 +162,7 @@ input, textarea, select {
 }
 
 .title {
-    color: #f0bd1a;
+    color: rgb(187, 145, 10);
     font-family: "Helvetica Bold", serif;
     font-size: 40px;
     line-height: 55px;
