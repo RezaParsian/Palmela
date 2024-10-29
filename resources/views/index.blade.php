@@ -10,7 +10,11 @@
                     </h1>
 
                     <div class="relative left-[14%] top-10">
-                        <img src="{{asset('./src/images/hero-shape-3.png')}}" id="hero-shape" alt="shape">
+                        {{--                        <img src="{{asset('/src/images/hero-shape-3.png')}}" id="hero-shape" alt="shape">--}}
+                        <div class="bg-white p-6 rounded shadow-lg shadow-amber-400">
+                            <p>From AUD to {{__('IRR')}}: <strong x-text="audToIrr"></strong> {{__('IRR')}}</p>
+                            <p>From {{__('IRR')}} to AUD: <strong x-text="irrToAud"></strong> {{__('IRR')}}</p>
+                        </div>
                     </div>
                 </div>
 
@@ -114,7 +118,8 @@
                             is an email address.
                         </p>
 
-                        <button class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-400 hover:text-black">
+                        <button
+                            class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-400 hover:text-black">
                             Get free quote now
                         </button>
                     </div>
@@ -130,7 +135,8 @@
                             information.
                         </p>
 
-                        <button class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-400 hover:text-black">
+                        <button
+                            class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-400 hover:text-black">
                             Get started now
                         </button>
                     </div>
@@ -408,7 +414,8 @@
                             Save up to 12x when
                             sending money abroad</h2>
 
-                        <p class="md:whitespace-pre-line text-[#474747] !text-[20px] !leading-[30px] regular mt-12 relative">The World Payments is designed for cross-border
+                        <p class="md:whitespace-pre-line text-[#474747] !text-[20px] !leading-[30px] regular mt-12 relative">The World Payments is designed for
+                            cross-border
                             businesses
                             trading in multiple
                             currencies. For importers and exporters, whether you do business on a marketplace.
@@ -424,7 +431,8 @@
                                     <img src="{{asset('./src/images/lock.svg')}}" alt="lock">
                                 </div>
 
-                                <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-black">Our dedicated fraud and security
+                                <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-black">Our dedicated
+                                    fraud and security
                                     teams work to keep your money safe</p>
                             </div>
 
@@ -433,7 +441,8 @@
                                     <img src="{{asset('./src/images/fingerprint.svg')}}" alt="fingerprint">
                                 </div>
 
-                                <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-black">We use 3-factor to authentication
+                                <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-black">We use 3-factor
+                                    to authentication
                                     to protect your account</p>
                             </div>
 
@@ -442,7 +451,8 @@
                                     <img src="{{asset('./src/images/planning.svg')}}" alt="planning">
                                 </div>
 
-                                <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-black">We hold your money established
+                                <p class="text-center md:text-left px-12 md:px-0 md:whitespace-pre-line !leading-[26px] !text-[16px] text-black">We hold your
+                                    money established
                                     financial institutions</p>
                             </div>
                         </div>
@@ -777,7 +787,7 @@
                 selectedFrom: null,
                 selectedTo: null,
                 amount: 1,
-                timer:null,
+                timer: null,
                 chart: null,
                 labels: [],
                 datasets: [
@@ -806,6 +816,15 @@
                         this.getChartData();
                     });
                 },
+                get audToIrr() {
+                    const price=this.calculateExchange(1,'AUD','IRR');
+                    return price===0 || price===Infinity ? 'Please Call' : price.toLocaleString();
+                },
+                get irrToAud() {
+                    const audPrice = this.currencies.find(x => x.symbol.toLowerCase() === 'aud').price;
+                    const price = this.calculateExchange(audPrice, 'IRR', 'AUD');
+                    return price===0 || price===Infinity ? 'Please Call' : (price*audPrice).toLocaleString();
+                },
                 get iconFrom() {
                     if (!this.selectedFrom)
                         return;
@@ -823,14 +842,17 @@
                     return `https://flagcdn.com/48x36/${currency.country_code.toLowerCase()}.png`
                 },
                 get calculate() {
-                    if (!this.selectedFrom || !this.selectedTo)
+                    return this.calculateExchange(this.amount, this.selectedFrom, this.selectedTo);
+                },
+                calculateExchange(amount, from, to) {
+                    if (!from || !to)
                         return 0;
 
-                    const fromCurrency = this.currencies.find(x => x.symbol === this.selectedFrom);
-                    const toCurrency = this.currencies.find(x => x.symbol === this.selectedTo);
+                    const fromCurrency = this.currencies.find(x => x.symbol === from);
+                    const toCurrency = this.currencies.find(x => x.symbol === to);
                     const rate = this.exchangeRates.find(x => x.base_currency_id === fromCurrency.id && x.target_currency_id === toCurrency.id)?.rate ?? 0;
 
-                    return ((this.amount * fromCurrency.price) / toCurrency.price) * rate;
+                    return ((amount * fromCurrency.price) / toCurrency.price) * rate;
                 },
                 getChartData() {
                     const fromCurrency = this.currencies.find(x => x.symbol === this.selectedFrom);

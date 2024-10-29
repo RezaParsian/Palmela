@@ -24,13 +24,62 @@
                     <div class="px-4 py-8">
                         <template x-if="exchange">
                             <form :action='url' method="post">
+                                <h5>
+                                    From
+                                    <span class="underline" x-text="exchange.from.symbol"></span>
+                                    Price
+
+                                    To
+                                    <span class="underline" x-text="exchange.to.symbol"></span>
+                                    Price
+                                </h5>
+
                                 @csrf
                                 @method('put')
 
                                 <div class="my-3">
+                                    <label for="rate" class="font-Hel_Med text-[18px] text-white">
+                                        Buy
+                                    </label>
+
+                                    <input type="number"
+                                           id="rate"
+                                           class="mt-3 border-palmela-300 focus:outline-none"
+                                           required
+                                           x-model.number="fromPrice">
+
+                                    @error('symbol')
+                                    <small class="text-rose-500">{{$message}}</small>
+                                    @enderror
+                                </div>
+
+                                <div class="my-3">
+                                    <label for="rate" class="font-Hel_Med text-[18px] text-white">
+                                        Sell
+                                    </label>
+
+                                    <input type="number"
+                                           id="rate"
+                                           class="mt-3 border-palmela-300 focus:outline-none"
+                                           required
+                                           x-model.number="toPRice">
+
+                                    @error('symbol')
+                                    <small class="text-rose-500">{{$message}}</small>
+                                    @enderror
+                                </div>
+
+                                <div class="my-3 hidden">
                                     <label for="rate" class="font-Hel_Med text-[18px] text-palmela-800">Exchange Rate</label>
 
-                                    <input type="number" step="0.1" name="rate" id="rate" class="mt-3 border-palmela-300 focus:outline-none" required x-model="exchange.rate">
+                                    <input type="number"
+                                           step="0.1"
+                                           name="rate"
+                                           id="rate"
+                                           class="mt-3 border-palmela-300 focus:outline-none"
+                                           required
+                                           readonly
+                                           :value="rate">
 
                                     @error('symbol')
                                     <small class="text-rose-500">{{$message}}</small>
@@ -84,7 +133,7 @@
                             <td class="p-4">{{$exchange->id}}</td>
                             <td class="p-4">{{$exchange->from->name}} ({{$exchange->from->symbol}})</td>
                             <td class="p-4">{{$exchange->to->name}} ({{$exchange->to->symbol}})</td>
-                            <td class="p-4">{{number_format($exchange->rate)}}</td>
+                            <td class="p-4">{{number_format($exchange->rate,1)}}</td>
                             <td class="p-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 24 24" class="cursor-pointer" @click="openModal({{$exchange}})">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -113,6 +162,14 @@
                 modalIsOpen: false,
                 exchange: null,
                 url: '',
+                fromPrice:0,
+                toPRice:0,
+                get rate(){
+                    if(this.fromPrice===0 || this.toPRice===0)
+                        return  this?.exchange?.rate;
+
+                    return (this.fromPrice / this.toPRice).toFixed(1);
+                },
                 openModal(exchange) {
                     this.modalIsOpen = true;
                     this.exchange = exchange;

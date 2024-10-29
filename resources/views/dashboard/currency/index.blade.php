@@ -108,7 +108,7 @@
                             <td class="p-4">{{$currency->id}}</td>
                             <td class="p-4">{{$currency->name}}</td>
                             <td class="p-4">{{$currency->symbol}}</td>
-                            <td class="p-4">{{number_format($currency->price)}} IRR</td>
+                            <td class="p-4">{{number_format($currency->price)}} {{__('IRR')}}</td>
                             <td class="p-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" height="1.4rem" viewBox="0 0 24 24" class="cursor-pointer" @click="openModal({{$currency}})">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">

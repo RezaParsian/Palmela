@@ -22,7 +22,7 @@ class UpdateExchangeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'rate' => ['required', 'numeric', 'min:1'],
+            'rate' => ['required', 'numeric', 'min:0'],
         ];
     }
 }
