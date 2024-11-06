@@ -20,6 +20,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'rezaparsian76@gmail.com',
         ]);
 
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
+        ]);
+
         $this->call([
             CurrencySeed::class,
             ExchangeSeed::class
