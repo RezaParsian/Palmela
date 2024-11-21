@@ -9,8 +9,7 @@
                         EXCHANGE
                     </h1>
 
-                    <div class="relative left-[14%] top-10">
-                        {{--                        <img src="{{asset('/src/images/hero-shape-3.png')}}" id="hero-shape" alt="shape">--}}
+                    <div class="hidden md:block relative left-[14%] top-10">
                         <div class="bg-white p-6 rounded shadow-lg shadow-amber-400">
                             <p>From AUD to {{__('IRR')}}: <strong x-text="audToIrr"></strong> {{__('IRR')}}</p>
                             <p>From {{__('IRR')}} to AUD: <strong x-text="irrToAud"></strong> {{__('IRR')}}</p>
@@ -20,6 +19,13 @@
 
                 <h1 class="block md:hidden text-right mr-7">CURRENCY</h1>
 
+
+                <div class="md:hidden p-10 pb-0">
+                    <div class="bg-white p-6 rounded shadow-lg shadow-amber-400">
+                        <p>From AUD to {{__('IRR')}}: <strong x-text="audToIrr"></strong> {{__('IRR')}}</p>
+                        <p>From {{__('IRR')}} to AUD: <strong x-text="irrToAud"></strong> {{__('IRR')}}</p>
+                    </div>
+                </div>
 
                 <div class="flex flex-col md:flex-row md:gap-12">
                     <div class="w-full md:flex-1 px-4 md:px-16">
@@ -119,7 +125,7 @@
                         </p>
 
                         <button
-                            class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-400 hover:text-black">
+                                class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-400 hover:text-black">
                             Get free quote now
                         </button>
                     </div>
@@ -136,7 +142,7 @@
                         </p>
 
                         <button
-                            class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-400 hover:text-black">
+                                class="rounded-lg bg-palmela-500 border border-palmela-800 py-3 md:py-4 px-6 md:px-12 font-semibold my-6 hover:bg-palmela-400 hover:text-black">
                             Get started now
                         </button>
                     </div>

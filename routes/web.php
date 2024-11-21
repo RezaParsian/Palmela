@@ -51,4 +51,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'dashboard'], function () {
     Route::get('currencies/exchange', [CurrencyController::class, 'exchangeIndex'])->name('currencies.exchange.index');
     Route::put('currencies/exchange/{exchange}', [CurrencyController::class, 'updateExchange'])->name('currencies.exchange.update');
     Route::put('currencies/{currency}', [CurrencyController::class, 'update'])->name('currencies.update');
+    Route::get('users',[AuthController::class, 'users'])->name('users.index');
+    Route::post('users',[AuthController::class, 'storeUser'])->name('users.store');
+    Route::put('users/{user}',[AuthController::class, 'updateUser'])->name('users.update');
+    Route::delete('users/{user}',[AuthController::class, 'destroyUser'])->name('users.destroy');
 });

@@ -55,6 +55,11 @@
                     <li>
                         <a class="helvetica-medium" title="Help" href="{{route('currencies.exchange.index')}}">Exchange Rate</a>
                     </li>
+
+
+                    <li>
+                        <a class="helvetica-medium" title="Help" href="{{route('users.index')}}">Users</a>
+                    </li>
                 @endif
             </ul>
 
